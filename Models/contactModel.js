@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
 
-const contactSchema = new mongoose.Schema({
+const contactSchema = mongoose.Schema({
     id: {
         type:Number,
         required: true,
     },
-    PhoneNumber: String,
+    phoneNumber: String,
     email: String,
     linkedId:  {
         type:Number,
@@ -28,4 +28,4 @@ const contactSchema = new mongoose.Schema({
     }   
 })
 
-module.exports = contactSchema;
+module.exports = mongoose.model("Contact", contactSchema);
