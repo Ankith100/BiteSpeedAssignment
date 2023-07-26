@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());
 app.use(morgan('tiny'));
 app.use('/', require('./routes/contactRoute'));
+app.get("/", (req, res) => {
+    res.send("Test it on Postman :)");
+});
 
 connectDb();
 
